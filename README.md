@@ -297,3 +297,39 @@ File:/WEB-INF/view/main-menu.jsp
 ```
 
 
+##  Reading HTML Form Data - Overview
+
+**Application Flow**
+
+
+![image](https://user-images.githubusercontent.com/80107049/187048258-61d8cf52-72ed-487e-886f-12ea81872f52.png)
+
+**Controller Class**
+
+```JAVA
+@Controller
+public class HelloWorldController {
+
+    // need a controller method to show the initial HTML form
+    @RequestMapping("/showForm")
+    public String showForm() {
+        return "helloworld-form"; //WEB-INF/view/helloworld-form.jsp
+    }
+
+    // need a controller method tp Process the HTML form
+    @RequestMapping("/processForm")
+    public String processForm() {
+        return "helloworld";
+    }
+```
+
+**Development Process**
+1. **Create Controller class**
+2. **Show HTML form**
+  1. Create controller method to show HTML Form
+  2. Create View page for HTML form
+
+3. **Process HTML Form**
+  1. Create controller method to process HTML Form
+  2. Develop View Page for Confirmation
+
