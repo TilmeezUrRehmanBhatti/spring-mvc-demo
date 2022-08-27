@@ -208,17 +208,17 @@ File:spring-mvc-demo-servlet.xml
   + prepend the prefix
   + append the suffix    
 <img align="left" width="400" src="https://user-images.githubusercontent.com/80107049/187021207-b43765e3-34de-4ec8-9a81-1f3e99e9d11c.png"></br>
-</br>
+</br></br></br></br></br>
 
 
-</br>**Spring MVC Example**</br>
+</br>**Spring MVC Example**</br></br></br></br></br>
 
 <img align="left" width="400" src="https://user-images.githubusercontent.com/80107049/187021270-128c300f-af13-478c-a9d7-dec48232506b.png"></br>
 
 + Setup a request mapping for a given path
 + HomeController will handle the request and forward it to a view template 
   + Which will call main-menu.jsp
-
+    </br></br></br></br></br></br></br>
 **Development Process**
 1. Create Controller class
 2. Define Controller method 
