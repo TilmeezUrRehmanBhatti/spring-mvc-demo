@@ -333,3 +333,46 @@ public class HelloWorldController {
   1. Create controller method to process HTML Form
   2. Develop View Page for Confirmation
 
+## Adding Data to the Spring Model - Overvie
+
+**Spring Model**
++ The **Model** is a container for your application data
+
+
++ In your Controller
+  + You can put anything in the **model**
+  + string, objects, info from database, etc...
+
++ Your View page (JSP) can access data from the **model**
+
+**Code Example**
++ We want to create a new method to process form data
++ Read the form data: student's name
++ Convert the name to upper case
++ Add the uppercase version to the model
+
+**Passing Model to your Controller**
+
+![clipboard.png](https://user-images.githubusercontent.com/80107049/187261264-65d08c11-c1d4-4b92-ad8b-2c13e1680183.png)
+**View Template - JSP**
+
+<img src="https://user-images.githubusercontent.com/80107049/187261882-5019ab74-5632-4919-9a2a-19d988032b7c.png" width = 700 />
+
+**Adding more data to your Model**
+
+```JAVA
+// get the data
+
+String result = ...;
+List<Student> theStudentList = ...;
+ShoppingCart theShoppingCart = ...;
+
+// add data to the model
+
+model.addAttribute("message", result);
+
+model.addAttribute("message", theStudentList);
+
+model.addAttribute("message", theShoppingCart);
+```
+
