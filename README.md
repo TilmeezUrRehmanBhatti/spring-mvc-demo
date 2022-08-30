@@ -8,8 +8,6 @@
 **Model-View-Controller(MVC)**
 
 
-<img src="https://user-images.githubusercontent.com/80107049/187021053-7a826ede-9526-41f4-a247-bc33758821d7.png" width=600 />
-
 
 **Spring MVC Benefits**
 + The Spring way of building web app UIs in Java
@@ -375,4 +373,62 @@ model.addAttribute("message", theStudentList);
 
 model.addAttribute("message", theShoppingCart);
 ```
+
+## Binding Request Params - Overview
++ Instead of using HttpServletRequest
+
+```JAVA
+@RequestMapping("/processFormVersionTwo")
+public String letsShoutDude(HttpServletRequest request, Model model) {
+  
+  // read the request parameter from the HTML form
+  String theName = request.getParameter("studentName");
+  
+ ... 
+}
+```
++ Bind variable using @RequestParam Annotation
+
+```JAVA
+@RequestMapping("/processFromVersionTwo")
+public String letShoutDude(
+  @RequestParam("studentName") String theName,
+  Model model) {
+  
+  // now we can use the variable: theName
+  
+}
+```
++ Behind the scenes:
+  + Spring will read param from request: studentName
+  + Bind it to variable: theName
+
+
+## Controller Level Request Mapping - Overview
+
+Adding request mapping to controller
++ Server as parent mapping for controller
++ All request mappings on methods in the controller are relative
++ Similar to folder directory structure
+
+**Controller Request Mapping**
+```JAVA
+@RequestMapping("/funny") //Controller mapping
+public class FunnyController {
+  
+  @RequestMapping("/showForm")
+  public String showForm() {
+   ... 
+  }
+  
+  @RequestMapping("/processForm")
+  public String process(HttpServletRequest request, Model model) {
+   ... 
+  }
+  
+}
+```
++ Here controller mapping is `funny`
++ Method mappings are `showForm` and `processForm`
+  + `/funny/showForm` and `/funny/processForm`
 
